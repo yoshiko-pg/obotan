@@ -1,0 +1,17 @@
+/.bundle
+/db/*.sqlite3
+/log/*.log
+/tmp
+.DS_Store
+/public/assets*
+/config/database.yml
+newrelic.yml
+.foreman
+.env
+doc/
+*.swp
+*~
+.project
+.idea
+.secret
+/*.iml
