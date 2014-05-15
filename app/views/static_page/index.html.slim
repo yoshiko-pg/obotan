@@ -1,4 +1,6 @@
 - if @user
   = render 'users/home'
 - else
-  = render 'static_pages/home'
+  = render 'static_page/home'
+
+= debug session["devise.twitter_data"]

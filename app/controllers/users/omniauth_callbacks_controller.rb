@@ -13,6 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
   def user_params
-    request.env["omniauth.auth"].slice(:provider, :uid).to_h
+    env = request.env["omniauth.auth"]
+    env.slice(:provider, :uid).to_h.merge({user_name: env['info']['nickname']})
   end
 end

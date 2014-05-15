@@ -1,0 +1,12 @@
+h2 = category.name
+table.table.table-striped.table-hover
+  tr
+    th = category.name
+    th = link_to "カテゴリ名を編集", destory_category_path(category.id), class: 'btn btn-link'
+    th
+    th = link_to "一気に覚えた！", remember_path, class: 'btn btn-default'
+    th
+
+    - @words[category.id].each do |w|
+      = render 'words/word', word: w
+

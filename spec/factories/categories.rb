@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :category do
-    user_id "MyString"
-    name "MyString"
+    user_id 1
+    name "英語"
   end
 end

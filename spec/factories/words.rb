@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :word do
-    category_id "MyString"
-    user_id "MyString"
-    word "MyString"
-    mean "MyString"
-    remember_count "MyString"
+    category_id 1
+    user_id 1
+    word "remember"
+    mean "覚える"
+    remember_count 0
   end
 end
