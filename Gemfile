@@ -11,8 +11,9 @@ gem "spring"
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
-gem 'therubyracer', '0.12.1'
-gem 'twitter-bootswatch-rails', '~> 3.1.1'
+gem 'therubyracer'
+gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
 
 group :development, :test do
