@@ -10,6 +10,7 @@ gem "nokogiri"
 gem "spring"
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem "sqlite3"

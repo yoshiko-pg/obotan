@@ -7,4 +7,15 @@ html lang="ja"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
+
+    - if user_signed_in?
+      = link_to "Sign out", destroy_user_session_path
+    - else
+      = link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+
+    p.notice = notice
+    p.alert  = alert
+
+    = debug current_user
+
     = yield
