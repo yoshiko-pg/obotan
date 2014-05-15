@@ -9,17 +9,17 @@ Bundler.require(*Rails.groups)
 module Oboetango
   class Application < Rails::Application
     config.active_record.default_timezone = :local
-config.time_zone = 'Tokyo'
-config.i18n.default_locale = :ja
-config.generators do |g|
-  g.template_engine = :slim
-  g.test_framework  = :rspec
-  g.integration_tool  = :rspec
-  g.fixture_replacement :factory_girl
-  g.stylesheets = false
-  g.javascripts = false
-  g.helper      = false
-end
+    config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja
+    config.generators do |g|
+      g.template_engine = :slim
+      g.test_framework  = :rspec
+      g.integration_tool  = :rspec
+      g.fixture_replacement :factory_girl
+      g.stylesheets = false
+      g.javascripts = false
+      g.helper      = false
+    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

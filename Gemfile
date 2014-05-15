@@ -8,6 +8,7 @@ gem "faker"
 gem "will_paginate"
 gem "nokogiri"
 gem "spring"
+
 group :development, :test do
   gem "sqlite3"
   gem "rspec-rails"
@@ -15,6 +16,8 @@ group :development, :test do
   gem "guard-rspec"
   gem "guard-spring"
   gem "factory_girl_rails"
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+  gem 'wdm', platforms: [:mingw, :mswin, :x64_mingw]
 end
 
 group :test do
