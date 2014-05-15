@@ -8,6 +8,8 @@ gem "faker"
 gem "will_paginate"
 gem "nokogiri"
 gem "spring"
+gem 'devise'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem "sqlite3"
