@@ -20,6 +20,7 @@ module Oboetango
       g.javascripts = false
       g.helper      = false
     end
+    config.app_generators.stylesheet_engine :less
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

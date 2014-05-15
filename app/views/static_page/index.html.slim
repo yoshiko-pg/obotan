@@ -1,2 +1,4 @@
-h1 StaticPage#index
-p Find me in app/views/static_page/index.html.slim
+- if @user
+  = render 'users/home'
+- else
+  = render 'static_pages/home'
