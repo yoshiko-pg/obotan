@@ -15,6 +15,7 @@ gem 'therubyracer'
 gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
+gem 'simple_form'
 
 group :development, :test do
   gem "sqlite3"
