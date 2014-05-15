@@ -324,6 +324,7 @@ DEPENDENCIES
   spring
   sqlite3
   therubyracer
+  timers
   turbolinks
   twitter-bootswatch-rails
   twitter-bootswatch-rails-fontawesome

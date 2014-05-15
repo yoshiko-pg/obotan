@@ -1,0 +1,15 @@
+= simple_form_for(@word) do |f|
+  .alert.alert-error = f.error_notification
+
+  .form-inputs
+    = f.label :category_id, "カテゴリー"
+    = f.collection_select :category_id, @categories, :id, :name
+
+    = f.label :word, "単語"
+    = f.text_field :word, {class: 'form-control'}
+
+    = f.label :mean, "意味"
+    = f.text_field :mean, {class: 'form-control'}
+
+  .form-actions
+    = f.button :submit

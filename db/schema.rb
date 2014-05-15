@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515141355) do
+ActiveRecord::Schema.define(version: 20140515150117) do
 
   create_table "categories", force: true do |t|
     t.integer  "user_id"
@@ -23,16 +23,16 @@ ActiveRecord::Schema.define(version: 20140515141355) do
   create_table "users", force: true do |t|
     t.string   "provider"
     t.string   "uid"
+    t.string   "user_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_name"
   end
 
   add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
 
   create_table "words", force: true do |t|
-    t.integer  "category_id"
     t.integer  "user_id"
+    t.integer  "category_id"
     t.string   "word"
     t.string   "mean"
     t.integer  "remember_count"

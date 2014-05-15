@@ -16,6 +16,7 @@ gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
 gem 'simple_form'
+gem 'timers'
 
 group :development, :test do
   gem "sqlite3"

@@ -1,4 +1,10 @@
-= debug current_user
-
 - @categories.each do |c|
-  = render 'words/category', category: c
+
+  h2 = c.name
+
+  table.table.table-striped.table-hover
+    tr
+      - @words.each do |w|
+        td = w.mean
+        td = text_field :word, :word
+        td = link_to "覚えたよ！", '#', {class: 'btn btn-info'}
