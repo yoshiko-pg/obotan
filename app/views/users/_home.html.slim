@@ -4,7 +4,10 @@
 
   table.table.table-striped.table-hover
     tr
-      - @words.each do |w|
-        td = w.mean
-        td = text_field :word, :word
-        td = link_to "覚えたよ！", '#', {class: 'btn btn-info'}
+      - if words = @words.where(category_id: c)
+        - words.each do |w|
+          tr
+          td = w.mean
+          td = text_field :word, :word
+          td = link_to "覚えたよ！", '#', {class: 'btn btn-info'}
+          td = link_to "なんだっけ？", '#', {class: 'btn btn-warning', id: 'btn-forget'}
