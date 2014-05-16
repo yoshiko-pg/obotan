@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :get_categories
   before_action :get_words
 
-  def my_words
+  def mypage
+    redirect_to root_path unless User.find_by_user_name(params[:user_name])
+
     # 自分のページ
     if @user.user_name == params[:user_name]
     else
     end
-
-    render 'users/my_words'
   end
 end

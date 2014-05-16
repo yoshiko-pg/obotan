@@ -4,18 +4,15 @@ header
       .navbar-header
         = link_to "OBOTAN", root_path, id: "logo"
 
-      - if @user
-        nav
-          ul.nav.navbar-nav.navbar-right
+      nav
+        ul.nav.navbar-nav.navbar-right
+
+          - if @user
             li
               = link_to @user.user_name, "/#{@user.user_name}"
             li
               = link_to "ログアウト", destroy_user_session_path
 
-  section#nav_sub
-    - if @user
-      = link_to "単語を追加", new_word_path, class: "btn btn-primary mr10"
-      = link_to "カテゴリを追加", new_category_path, class: "btn btn-success"
-    - else
-      = link_to "Twitterでログイン", user_omniauth_authorize_path(:twitter), class: "btn btn-info"
+          - else
+            = link_to "Twitterでログイン", user_omniauth_authorize_path(:twitter), class: "btn btn-info"
 

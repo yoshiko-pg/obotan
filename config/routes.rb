@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  match '/(:user_name)', to: 'users#my_words', via: 'get'
+  match '/(:user_name)', to: 'users#mypage', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
