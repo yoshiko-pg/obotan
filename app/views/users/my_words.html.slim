@@ -1,0 +1,11 @@
+- @categories.each do |c|
+
+  h2 = c.name
+
+  table.table.table-striped
+    tr
+      - if words = @words.where(category_id: c)
+        - words.each do |w|
+          tr
+          td = w.word
+          td = w.mean

@@ -3,8 +3,11 @@ module ApplicationHelper
     @user = current_user
   end
 
-  def get_category
-    @categories = Category.where(user_id: @user.id).limit(10)
-    #@categories = Category.find_by_user_id(@user)
+  def get_categories
+    @categories = Category.where(user_id: @user)
+  end
+
+  def get_words
+    @words = Word.where(user_id: @user).order(:category_id, :created_at)
   end
 end

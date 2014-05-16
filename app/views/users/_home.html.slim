@@ -2,7 +2,7 @@
 
   h2 = c.name
 
-  table.table.table-striped.table-hover
+  table.table.table-striped
     tr
       - if words = @words.where(category_id: c)
         - words.each do |w|

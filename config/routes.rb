@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
-  resources :users, only: [:show]
-  resources :words
-  resources :categories
+  resources :words, only: [:new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:new, :create, :edit, :update, :destroy]
 
   root 'static_page#index'
   get 'static_page/index'
-
-  match 'user(/:user_name)', to: 'user#word_list', via: 'get'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
+  match '/(:user_name)', to: 'users#my_words', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
