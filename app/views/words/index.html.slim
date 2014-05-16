@@ -1,29 +1,29 @@
 h1 Listing words
 
-table
-  thead
-    tr
-      th User
-      th Category
-      th Word
-      th Mean
-      th Remember count
-      th
-      th
-      th
+.row
+  .col-md-8.col-md-offset-2
+    table.table.table-striped
+      thead
+        tr
+          th Category
+          th Word
+          th Mean
+          th
+          th
 
-  tbody
-    - @words.each do |word|
-      tr
-        td = word.user_id
-        td = word.category_id
-        td = word.word
-        td = word.mean
-        td = word.remember_count
-        td = link_to 'Show', word
-        td = link_to 'Edit', edit_word_path(word)
-        td = link_to 'Destroy', word, data: {:confirm => 'Are you sure?'}, :method => :delete
+      tbody
+        - @words.each do |word|
+          tr
+            td = @categories.where(id: word.category_id).first.name
+            td = word.word
+            td = word.mean
+            td = link_to 'Edit', edit_word_path(word), class: 'btn btn-success'
+            td = link_to 'Destroy', word, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
-br
+  br
 
-= link_to 'New Word', new_word_path
+.text-center.form-group
+  = link_to 'New Word', new_word_path, class: 'btn btn-primary'
+
+.text-center.form-group
+  = link_to 'Back to TOP', root_path, class: 'btn btn-link'

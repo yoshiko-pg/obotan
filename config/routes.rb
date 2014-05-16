@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'static_page#index'
   get 'static_page/index'
 
+  match 'user(/:user_name)', to: 'user#word_list', via: 'get'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

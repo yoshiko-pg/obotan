@@ -1,23 +1,24 @@
 h1 Listing categories
 
-table
-  thead
-    tr
-      th User
-      th Name
-      th
-      th
-      th
+.row
+  .col-md-8.col-md-offset-2
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th category name
+          th
+          th
+          th
 
-  tbody
-    - @categories.each do |category|
-      tr
-        td = category.user_id
-        td = category.name
-        td = link_to 'Show', category
-        td = link_to 'Edit', edit_category_path(category)
-        td = link_to 'Destroy', category, data: {:confirm => 'Are you sure?'}, :method => :delete
+      tbody
+        - @categories.each do |category|
+          tr
+            td = category.name
+            td = link_to 'Edit', edit_category_path(category), class: 'btn btn-success'
+            td = link_to 'Destroy', category, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
-br
+    br
 
-= link_to 'New Category', new_category_path
+.text-center
+  = link_to 'New Category', new_category_path, class: 'btn btn-primary'
+  = link_to 'Back to TOP', root_path, class: 'btn btn-link'

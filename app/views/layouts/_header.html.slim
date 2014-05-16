@@ -2,13 +2,13 @@ header
   .navbar.navbar-default.navbar-fixed-top
     .container-fluid
       .navbar-header
-        = link_to "おぼたん", root_path, id: "logo"
+        = link_to "OBOTAN", root_path, id: "logo"
 
       - if @user
         nav
           ul.nav.navbar-nav.navbar-right
             li
-              = link_to @user.uid, user_path(@user)
+              = link_to @user.user_name, user_path(@user)
             li
               = link_to "ログアウト", destroy_user_session_path
 

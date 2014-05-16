@@ -2,4 +2,7 @@ h1 New word
 
 == render 'form'
 
-= link_to 'Back', root_path
+.text-center
+  = link_to 'Back to list', words_path, class: 'btn btn-link'
+  ' |
+  = link_to 'Back to TOP', root_path, class: 'btn btn-link'

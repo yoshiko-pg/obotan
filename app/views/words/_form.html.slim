@@ -1,15 +1,19 @@
-= simple_form_for(@word) do |f|
-  .alert.alert-error = f.error_notification
+.row
+  .well.col-md-6.col-md-offset-3
+    = simple_form_for(@word) do |f|
+      = f.error_notification
 
-  .form-inputs
-    = f.label :category_id, "カテゴリー"
-    = f.collection_select :category_id, @categories, :id, :name
+      .form-group
+        = f.label :category_id, "カテゴリー"
+        = f.collection_select :category_id, @categories, :id, :name, {}, { class: 'form-control' }
 
-    = f.label :word, "単語"
-    = f.text_field :word, {class: 'form-control'}
+      .form-group
+        = f.label :word, "単語"
+        = f.text_field :word, {class: 'form-control'}
 
-    = f.label :mean, "意味"
-    = f.text_field :mean, {class: 'form-control'}
+      .form-group
+        = f.label :mean, "意味"
+        = f.text_field :mean, {class: 'form-control'}
 
-  .form-actions
-    = f.button :submit
+      .form-group.text-center
+        = f.button :submit, class: 'btn btn-primary'

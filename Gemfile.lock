@@ -268,12 +268,6 @@ GEM
       execjs (>= 1.4.0)
       less-rails (>= 2.3)
       railties (>= 3.1)
-    twitter-bootswatch-rails-fontawesome (4.0.3.0)
-      less-rails (>= 2.3)
-      railties (>= 3.1)
-      twitter-bootswatch-rails
-    twitter-bootswatch-rails-helpers (3.1.0.0)
-      twitter-bootswatch-rails (~> 3.1.0)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
     tzinfo-data (1.2014.3)
@@ -324,11 +318,8 @@ DEPENDENCIES
   spring
   sqlite3
   therubyracer
-  timers
   turbolinks
   twitter-bootswatch-rails
-  twitter-bootswatch-rails-fontawesome
-  twitter-bootswatch-rails-helpers
   tzinfo-data
   uglifier
   wdm

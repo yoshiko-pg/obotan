@@ -1,8 +1,11 @@
-= simple_form_for(@category) do |f|
-  = f.error_notification
+.row
+  .well.col-md-6.col-md-offset-3
+    = simple_form_for(@category, class: 'forn-horizonal') do |f|
+      = f.error_notification
 
-  .form-inputs
-    = f.input :name
+      .form-group
+        = f.label :name, 'カテゴリ名'
+        = f.text_field :name, class: 'form-control'
 
-  .form-actions
-    = f.button :submit
+      .form-group.text-center
+        = f.button :submit, class: 'btn btn-primary'

@@ -12,11 +12,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'therubyracer'
-gem 'twitter-bootswatch-rails'
-gem 'twitter-bootswatch-rails-fontawesome'
-gem 'twitter-bootswatch-rails-helpers'
 gem 'simple_form'
-gem 'timers'
 
 group :development, :test do
   gem "sqlite3"
@@ -27,6 +23,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
   gem 'wdm', platforms: [:mingw, :mswin, :x64_mingw]
+  gem 'twitter-bootswatch-rails'
 end
 
 group :test do

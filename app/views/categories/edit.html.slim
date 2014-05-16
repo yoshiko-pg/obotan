@@ -2,7 +2,8 @@ h1 Editing category
 
 == render 'form'
 
-= link_to 'Show', @category
-'|
-= link_to 'Back', root_path
+.text-center
+  = link_to 'Back to list', categories_path, class: 'btn btn-link'
+  ' |
+  = link_to 'Back to TOP', root_path, class: 'btn btn-link'
 
