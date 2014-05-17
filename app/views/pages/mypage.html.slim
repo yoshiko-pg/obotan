@@ -10,7 +10,14 @@ h1.text-center
 
   - if words = @words.where(category_id: c)
     table.table.table-striped
-      - words.each do |w|
+      thead
+        tr
+          th
+          th 単語
+          th 意味
+
+      tbody
+        - words.each do |w|
           - if w.remember_count.blank?
             tr
               td

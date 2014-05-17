@@ -14,7 +14,7 @@
 
   - if words = @words.where(category_id: c)
     table.table.table-striped
-      tbody
+      thead
         tr
           th
           th 意味
@@ -24,6 +24,7 @@
           th
           th
 
+      tbody
         - words.each do |w|
           - if w.remember_count.blank?
             = render 'pages/default_line', word: w
