@@ -4,5 +4,5 @@ class Category < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :name, presence: true, length: { maximum: 40 }, 
-            uniqueness: { case_sensitive: false }
+            uniqueness: { scope: :user_id, case_sensitive: false }
 end

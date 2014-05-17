@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515150117) do
+ActiveRecord::Schema.define(version: 20140517042953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140515150117) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "categories", ["user_id", "name"], name: "index_categories_on_user_id_and_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"
@@ -42,5 +44,8 @@ ActiveRecord::Schema.define(version: 20140515150117) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "words", ["user_id", "category_id", "mean"], name: "index_words_on_user_id_and_category_id_and_mean", unique: true, using: :btree
+  add_index "words", ["user_id", "category_id", "word"], name: "index_words_on_user_id_and_category_id_and_word", unique: true, using: :btree
 
 end
