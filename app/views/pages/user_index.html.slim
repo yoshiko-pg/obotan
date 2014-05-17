@@ -4,7 +4,11 @@
 
 - @categories.each do |c|
 
-  h2.fa.fa-comment = c.name
+  h2
+    span.fa.fa-comment-o.fa-flip-horizontal
+    = c.name
+    = link_to "カテゴリ名編集", edit_category_path(c), class: 'btn btn-link pull-right'
+  
 
   table.table.table-striped
     tr
@@ -15,3 +19,5 @@
           td = text_field :word, :word
           td = link_to "覚えたよ！", '#', {class: 'btn btn-info'}
           td = link_to "なんだっけ？", '#', {class: 'btn btn-warning', id: 'btn-forget'}
+          td = link_to '編集', edit_word_path(w), {class: 'btn btn-link'}
+          td = link_to '削除', w, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'
