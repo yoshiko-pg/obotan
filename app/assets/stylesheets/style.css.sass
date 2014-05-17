@@ -28,6 +28,30 @@
   margin-right: 15px
 
 // ===================================
+// footer
+// ===================================
+footer
+  background-color: #158cba
+  border-bottom: 5px solid #127ba3
+  text-align: center
+  padding: 20px 0
+  color: #FFFFFF
+
+  #recommend
+    margin: 10px auto 30px
+    li
+      float: right
+      width: 120px
+      &.fb
+        width: 110px
+
+  a
+    color: #FFFFFF
+    text-decoration: underline
+    &:hover
+      color: #DDDDDD
+
+// ===================================
 // common
 // ===================================
 .mt5
@@ -54,6 +78,14 @@
   margin-left: 10px
 .mb10
   margin-bottom: 10px
+
+.cf
+  *zoom: 1
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
 
 // ===================================
 // control
