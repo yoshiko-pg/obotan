@@ -1,6 +1,6 @@
 $(function(){
   $word = $('tr#<%= @word.id %>')
-    $word.fadeOut(1000,function(){
+    $word.fadeOut(800,function(){
       $copy = $(this).clone().show().find('td:first-child .fa').remove();
       $(this).parents('table').find('tr:first-child').after('<%=
         escape_javascript(render 'pages/default_line', word: @word)
