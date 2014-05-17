@@ -1,0 +1,3 @@
+$(function(){
+  $('tr#<%= @word.id %> input[type=text]').attr('placeholder', "<%== escape_javascript(@hint) %>");
+});

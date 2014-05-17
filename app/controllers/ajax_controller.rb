@@ -15,9 +15,14 @@ class AjaxController < ApplicationController
     render 'ajax/forget.js.erb'
   end
 
+  def hint
+    @hint = @word[:word].split('').map{|c| rand(3).zero? ? c : '*' }.join('')
+    render 'ajax/hint.js.erb'
+  end
+
   private
     def get_edit_word
-      @word = Word.where(user_id: params[:user_id]).find_by_id(params[:id])
+      @word = Word.where(user_id: current_user.id).find_by_id(params[:id])
       redirect_to root_path if @word.blank?
     end
 end

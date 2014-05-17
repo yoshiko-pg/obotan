@@ -8,6 +8,6 @@ tr id="#{word.id}"
       = text_field_tag :word, '', class: 'word_input'
     td
       = submit_tag "覚えたよ！", class: 'btn btn-info'
-  td = link_to "なんだっけ？", '#', {class: 'btn btn-warning', id: 'btn-forget'}
+  td = link_to "なんだっけ？", { controller: :ajax, action: :hint, id: word.id }, {remote: true, class: 'btn btn-warning', id: 'btn-forget'}
   td = link_to '編集', edit_word_path(word), {class: 'btn btn-link'}
   td = link_to '削除', word, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'
