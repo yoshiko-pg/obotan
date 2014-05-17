@@ -4,7 +4,9 @@ h1.text-center
 
 - @categories.each do |c|
 
-  h2 = c.name
+  h2
+    span.fa.fa-comment-o.fa-flip-horizontal
+    = c.name
 
   table.table.table-striped
     tr
