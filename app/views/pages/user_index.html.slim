@@ -3,6 +3,7 @@
     = link_to "単語を追加", new_word_path, class: "btn btn-primary mr10"
   = link_to "カテゴリを追加", new_category_path, class: "btn btn-success"
 
+#test
 - @categories.each do |c|
 
   h2
@@ -11,14 +12,20 @@
     = link_to '削除', c, data: {confirm: "カテゴリ「#{c.name}」に含まれる単語もすべて削除されますが、よろしいですか？"}, method: :delete, class: 'btn btn-link pull-right'
     = link_to "カテゴリ名編集", edit_category_path(c), class: 'btn btn-link pull-right'
 
-  table.table.table-striped
-    tr
-      - if words = @words.where(category_id: c)
+  - if words = @words.where(category_id: c)
+    table.table.table-striped
+      tbody
+        tr
+          th
+          th 意味
+          th 単語を入力
+          th チェック！
+          th ヒント表示
+          th
+          th
+
         - words.each do |w|
-          tr
-          td = w.mean
-          td = text_field :word, :word
-          td = link_to "覚えたよ！", '#', {class: 'btn btn-info'}
-          td = link_to "なんだっけ？", '#', {class: 'btn btn-warning', id: 'btn-forget'}
-          td = link_to '編集', edit_word_path(w), {class: 'btn btn-link'}
-          td = link_to '削除', w, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'
+          - if w.remember_count.blank?
+            = render 'pages/default_line', word: w
+          - else
+            = render 'pages/remember_line', word: w

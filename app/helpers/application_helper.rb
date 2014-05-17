@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def get_words user = nil
     user ||= @user
-    @words = Word.where(user_id: user).order(:category_id, :created_at)
+    @words = Word.where(user_id: user)
   end
 
   def twitter_icon user_name, size = 'normal'

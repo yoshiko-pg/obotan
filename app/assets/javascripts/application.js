@@ -16,3 +16,5 @@
 
 //= require bootstrap
 //= require lumen/loader
+//= require lumen/bootswatch
+//= require script

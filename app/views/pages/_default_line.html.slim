@@ -1,0 +1,13 @@
+tr id="#{word.id}"
+  td
+  td = word.mean
+  = form_tag({ controller: :ajax, action: :check }, remote: true) do
+    = hidden_field_tag :id, word.id
+    = hidden_field_tag :user_id, @user.id
+    td
+      = text_field_tag :word, '', class: 'word_input'
+    td
+      = submit_tag "覚えたよ！", class: 'btn btn-info'
+  td = link_to "なんだっけ？", '#', {class: 'btn btn-warning', id: 'btn-forget'}
+  td = link_to '編集', edit_word_path(word), {class: 'btn btn-link'}
+  td = link_to '削除', word, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'

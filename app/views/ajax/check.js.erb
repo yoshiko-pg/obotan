@@ -1,0 +1,16 @@
+$(function(){
+  $word = $('tr#<%= @word.id %>')
+  <% if @result %>
+    $word.fadeOut(1000,function(){
+      $(this).parents('table').find('tr:last-child').after('<%=
+        escape_javascript(render 'pages/remember_line', word: @word)
+      %>');
+      $(this).remove();
+    });
+  <% else %>
+    $peke = $('<span />').addClass('fa fa-times fa-2x text-danger');
+    $result = $word.find('td:first-child')
+    $result.append($peke);
+    $result.find('span').fadeOut(1500,function(){$(this).remove()});
+  <% end %>
+});
