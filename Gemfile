@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "rails"
+gem "pg"
 gem "slim-rails"
 gem "bootstrap-sass"
 gem "bcrypt-ruby"
@@ -20,7 +21,6 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 
 group :development, :test do
-  gem "sqlite3"
   gem "rspec-rails"
   gem "guard"
   gem "guard-rspec"
@@ -47,6 +47,5 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder"
 group :production do
-  gem "pg"
   gem "rails_12factor"
 end
