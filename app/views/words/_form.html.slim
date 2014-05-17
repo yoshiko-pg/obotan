@@ -1,7 +1,7 @@
 .row
   .well.col-md-6.col-md-offset-3
     = simple_form_for(@word) do |f|
-      = f.error_notification
+      = render 'layouts/error_message', errors: f.object.errors
 
       .form-group
         = f.label :category_id, "カテゴリー"

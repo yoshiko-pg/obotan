@@ -1,0 +1,3 @@
+- if errors.any?
+  - errors.full_messages.each do |msg|
+    .alert.alert-danger.alert-dismissable = msg

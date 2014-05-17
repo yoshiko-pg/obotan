@@ -1,10 +1,10 @@
 .row
   .well.col-md-6.col-md-offset-3
     = simple_form_for(@category, class: 'forn-horizonal') do |f|
-      = f.error_notification
+      = render 'layouts/error_message', errors: f.object.errors
 
       .form-group
-        = f.label :name, 'カテゴリ名'
+        = f.label :name, 'カテゴリ名（例：英語/フランス語/UNIXコマンド...等）'
         = f.text_field :name, class: 'form-control'
 
       .form-group.text-center
