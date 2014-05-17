@@ -17,6 +17,7 @@ else
   gem 'therubyracer', :path => 'therubyracer-0.11.0beta1-x86-mingw32', :require => 'v8'
 end
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem "sqlite3"

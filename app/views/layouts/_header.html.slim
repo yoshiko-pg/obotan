@@ -5,9 +5,8 @@ header
         = link_to "OBOTAN", root_path, id: "logo"
 
       nav
-        ul.nav.navbar-nav.navbar-right
-
-          - if @user
+        - if @user
+          ul.nav.navbar-nav.navbar-right
             li
               = link_to @user.user_name do
                 = image_tag "http://furyu.nazo.cc/twicon/#{@user.user_name}/mini", id: 'user_icon'
@@ -15,6 +14,7 @@ header
             li
               = link_to "ログアウト", destroy_user_session_path
 
-          - else
+        - else
+          .navbar-right.mt7
             = link_to "Twitterでログイン", user_omniauth_authorize_path(:twitter), class: "btn btn-info"
 
