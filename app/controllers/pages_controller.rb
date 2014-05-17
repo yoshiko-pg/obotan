@@ -14,5 +14,6 @@ class PagesController < ApplicationController
     get_user
     get_categories @this_user
     get_words @this_user
+    @words.reverse_order!
   end
 end

@@ -1,6 +1,6 @@
 h1.text-center
   = image_tag twitter_icon(@this_user.user_name, 'bigger'), id: 'user_big_icon'
-  = "#{@this_user.user_name}が覚えた単語"
+  = "#{@this_user.user_name}の単語リスト"
 
 - @categories.each do |c|
 
@@ -8,10 +8,17 @@ h1.text-center
     span.fa.fa-comment-o.fa-flip-horizontal
     = c.name
 
-  table.table.table-striped
-    tr
-      - if words = @words.where(category_id: c)
-        - words.each do |w|
-          tr
-          td = w.word
-          td = w.mean
+  - if words = @words.where(category_id: c)
+    table.table.table-striped
+      - words.each do |w|
+          - if w.remember_count.blank?
+            tr
+              td
+              td = w.word
+              td = w.mean
+          - else
+            tr.text-success
+              td
+                span.fa.fa-check.fa-2x.text-success
+              td = w.word
+              td = w.mean
