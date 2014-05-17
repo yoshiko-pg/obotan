@@ -4,6 +4,7 @@ gem "rails"
 gem "pg"
 gem "slim-rails"
 gem "bootstrap-sass"
+gem 'twitter-bootswatch-rails'
 gem "bcrypt-ruby"
 gem "faker"
 gem "will_paginate"
@@ -15,6 +16,12 @@ gem 'dotenv-rails'
 gem 'therubyracer'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem "sass-rails"
+gem "uglifier"
+gem "coffee-rails"
+gem "jquery-rails"
+gem "turbolinks"
+gem "jbuilder"
 
 group :development, :test do
   gem "rspec-rails"
@@ -24,7 +31,6 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
   gem 'wdm', platforms: [:mingw, :mswin, :x64_mingw]
-  gem 'twitter-bootswatch-rails'
 end
 
 group :test do
@@ -36,12 +42,6 @@ group :test do
   gem "rb-notifu"
 end
 
-gem "sass-rails"
-gem "uglifier"
-gem "coffee-rails"
-gem "jquery-rails"
-gem "turbolinks"
-gem "jbuilder"
 group :production do
   gem "rails_12factor"
 end
