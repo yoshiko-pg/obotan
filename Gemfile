@@ -11,7 +11,11 @@ gem "spring"
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
-gem 'therubyracer'
+if RUBY_PLATFORM =~ /darwin/
+  gem 'therubyracer'
+else
+  gem 'therubyracer', :path => 'therubyracer-0.11.0beta1-x86-mingw32', :require => 'v8'
+end
 gem 'simple_form'
 
 group :development, :test do
