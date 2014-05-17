@@ -30,12 +30,9 @@ describe CategoriesController do
   # CategoriesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET index" do
-    it "assigns all categories as @categories" do
-      category = Category.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:categories).should eq([category])
-    end
+  describe "not access index" do
+    before { visit categories_url }
+    specify { expect(response).to redirect_to(root_path) }
   end
 
   describe "GET show" do

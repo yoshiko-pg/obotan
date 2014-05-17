@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe StaticPageController do
+describe PagesController do
 
   describe "GET 'index'" do
     it "returns http success" do

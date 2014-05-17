@@ -9,7 +9,9 @@ header
 
           - if @user
             li
-              = link_to @user.user_name, "/#{@user.user_name}"
+              = link_to @user.user_name do
+                = image_tag "http://furyu.nazo.cc/twicon/#{@user.user_name}/mini", id: 'user_icon'
+                = @user.user_name
             li
               = link_to "ログアウト", destroy_user_session_path
 
