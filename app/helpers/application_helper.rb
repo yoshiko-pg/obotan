@@ -7,12 +7,14 @@ module ApplicationHelper
     @user = current_user
   end
 
-  def get_categories
-    @categories = Category.where(user_id: @user)
+  def get_categories user = nil
+    user ||= @user
+    @categories = Category.where(user_id: user)
   end
 
-  def get_words
-    @words = Word.where(user_id: @user).order(:category_id, :created_at)
+  def get_words user = nil
+    user ||= @user
+    @words = Word.where(user_id: user).order(:category_id, :created_at)
   end
 
   def twitter_icon user_name, size = 'normal'

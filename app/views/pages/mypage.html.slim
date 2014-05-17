@@ -1,6 +1,6 @@
 h1.text-center
-  = image_tag twitter_icon(@user.user_name, 'bigger'), id: 'user_big_icon'
-  = "#{@user.user_name}が覚えた単語"
+  = image_tag twitter_icon(@this_user.user_name, 'bigger'), id: 'user_big_icon'
+  = "#{@this_user.user_name}が覚えた単語"
 
 - @categories.each do |c|
 

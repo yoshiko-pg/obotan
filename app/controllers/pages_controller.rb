@@ -8,17 +8,11 @@ class PagesController < ApplicationController
   end
 
   def mypage
-    redirect_to root_path unless User.find_by_user_name(params[:user_name])
+    @this_user = User.find_by_user_name(params[:user_name])
+    redirect_to root_path if @this_user.blank?
 
-    if user_signed_in?
-      get_user
-      get_categories
-      get_words
-    end
-
-    # 自分のページ
-    if @user.user_name == params[:user_name]
-    else
-    end
+    get_user
+    get_categories @this_user
+    get_words @this_user
   end
 end
