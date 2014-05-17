@@ -1,5 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  Devise.setup do |config|
+    config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_SECRET_KEY'], :display => 'popup'
+  end
+
 
   # Code is not reloaded between requests.
   config.cache_classes = true
