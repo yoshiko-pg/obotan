@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'pages/index'
 
   post 'ajax/check'
-  post 'ajax/forget'
+  get 'ajax/forget'
   get 'ajax/hint'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
