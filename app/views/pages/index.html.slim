@@ -1,13 +1,40 @@
-h1 おぼえたんごちょう
+h1 OBOTAN − おぼえたんごちょう
 p
-  | 単語を覚えるサイトです。
+  | 覚えた単語が一目でわかる！
+  br
+  | 単語を登録して覚えるサイトです。
 
+.text-center
+  = link_to "Twitterでログイン", user_omniauth_authorize_path(:twitter), class: "btn btn-info"
+
+h2 つかいかた
 ol
-  li カテゴリを追加(ex.英語、イタリア語、shellコマンド、railsコマンド・・・)
-  li 単語と意味を追加(ex.remember:覚える, C'ome sta:お元気ですか？, ls:ファイル一覧, migrate:マイグレーション...)
-  li 意味を見ながら、単語を埋める
+  li カテゴリを追加 (ex.英語、イタリア語、shellコマンド、railsコマンド・・・)
+  li 単語と意味を追加 (ex.remember:覚える, C'ome sta:お元気ですか？, ls:ファイル一覧...)
+  li 意味を見て単語を埋める
   li 覚えた！
 
+h2 べんりさ
+ul
+  li 入力できた単語とまだ入力できてない単語がひと目でわかります。
+  li 一度入力して覚えた単語もリストに戻して再度覚えることができます。
+  li 単語の一部だけ表示するヒント機能があります。
+  li 他の人の単語リストも見ることができます。
+
+h2 スクリーンショット
+h3 自分のホーム
+p = image_tag 'screenshot1.png', width: '800'
+
+h3 ユーザーページ
 p
-  | 見ないで入力できた単語とまだ入力できてない単語をわけて表示できます。
-  | 覚えた単語が一目でわかる！
+  a href='/yoshiko_pg' サンプル
+p = image_tag 'screenshot2.png', width: '800'
+
+h2 Comming Soon...
+ul
+  li 覚えた単語をツイート
+  li Facebookでログイン
+
+h2 News
+ul
+  li 2014 5/17 アルファ版公開。
