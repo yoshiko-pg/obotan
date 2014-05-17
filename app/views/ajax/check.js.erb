@@ -1,6 +1,8 @@
 $(function(){
   $word = $('tr#<%= @word.id %>')
   <% if @result %>
+    $ok = $('<span />').addClass('fa fa-check fa-2x text-success');
+    $result = $word.find('td:first-child').append($ok);
     $word.fadeOut(1000,function(){
       $(this).parents('table').find('tr:last-child').after('<%=
         escape_javascript(render 'pages/remember_line', word: @word)
@@ -9,8 +11,7 @@ $(function(){
     });
   <% else %>
     $peke = $('<span />').addClass('fa fa-times fa-2x text-danger');
-    $result = $word.find('td:first-child')
-    $result.append($peke);
+    $result = $word.find('td:first-child').append($peke);
     $result.find('span').fadeOut(1500,function(){$(this).remove()});
   <% end %>
 });
