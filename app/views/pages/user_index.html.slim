@@ -7,8 +7,8 @@
   h2
     span.fa.fa-comment-o.fa-flip-horizontal
     = c.name
+    = link_to '削除', c, data: {confirm: "カテゴリ「#{c.name}」に含まれる単語もすべて削除されますが、よろしいですか？"}, method: :delete, class: 'btn btn-link pull-right'
     = link_to "カテゴリ名編集", edit_category_path(c), class: 'btn btn-link pull-right'
-  
 
   table.table.table-striped
     tr
