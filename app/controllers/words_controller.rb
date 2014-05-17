@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_action :require_sign_in
   before_action :get_user
   before_action :get_categories
   before_action :set_word, only: [:edit, :update, :destroy]

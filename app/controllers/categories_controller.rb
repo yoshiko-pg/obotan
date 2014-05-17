@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :require_sign_in
   before_action :get_user
   before_action :set_category, only: [:edit, :update, :destroy]
 
