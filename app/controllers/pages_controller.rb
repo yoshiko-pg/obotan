@@ -1,9 +1,15 @@
 class PagesController < ApplicationController
   def index
     if get_user
-      if session['oauth_token'].blank?
+      if @user.oauth_token.blank? && session['oauth_token'].blank?
         redirect_to destroy_user_session_path
       else
+        if @user.oauth_token.blank?
+          @user.update(
+            oauth_token: session['oauth_token'],
+            oauth_secret: session['oauth_secret']
+          )
+        end
         @categories = Category.where(user_id: @user)
         @words = Word.where(user_id: @user)
         render 'pages/user_index'
