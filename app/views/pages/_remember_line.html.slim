@@ -4,6 +4,6 @@ tr id="#{word.id}"
   td = word.mean
   td.text-success = word.word
   td = link_to "また忘れた", { controller: :ajax, action: :forget, id: word.id }, {remote: true, class: 'btn btn-danger'}
-  td = link_to "ツイート", { controller: :ajax, action: :tweet, id: word.id }, {remote: true, class: 'btn btn-link'}
+  td = link_to "ツイート", { controller: :ajax, action: :tweet, id: word.id }, data: {confirm: "「#{word.word}/#{word.mean}」を覚えたツイートを投稿します"}, remote: true, class: 'btn btn-link'
   td = link_to '編集', edit_word_path(word), {class: 'btn btn-link'}
   td = link_to '削除', word, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'
