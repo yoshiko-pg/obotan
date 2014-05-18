@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'ajax/check'
   get 'ajax/forget'
   get 'ajax/hint'
+  get 'ajax/tweet'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do

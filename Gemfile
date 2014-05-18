@@ -22,6 +22,7 @@ gem "coffee-rails"
 gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder"
+gem "twitter"
 
 group :development, :test do
   gem "rspec-rails"
