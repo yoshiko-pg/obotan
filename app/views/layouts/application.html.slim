@@ -1,6 +1,7 @@
 html lang="ja"
   head
     meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
     title OBOTAN − おぼえたんごちょう −
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
@@ -9,7 +10,9 @@ html lang="ja"
 
     = render 'layouts/header'
 
-    section#main
-      = yield
+    .container
+      .row
+        section#main.col-lg-6
+          = yield
 
     = render 'layouts/footer'

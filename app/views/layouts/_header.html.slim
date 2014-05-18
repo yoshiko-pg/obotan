@@ -1,12 +1,16 @@
 header
   .navbar.navbar-default.navbar-fixed-top
-    .container-fluid
+    .container
       .navbar-header
-        = link_to "OBOTAN", root_path, id: "logo"
+        = link_to "OBOTAN", root_path, id: "logo", class: 'navbar-brand'
+        button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main"
+          span class="icon-bar"
+          span class="icon-bar"
+          span class="icon-bar"
 
-      nav
-        - if @user
-          ul.nav.navbar-nav.navbar-right
+      nav.navbar-collapse.collapse#navbar-main
+        ul.nav.navbar-nav.navbar-right
+          - if @user
             li
               = link_to "/#{@user.user_name}" do
                 = image_tag twitter_icon(@user.user_name, 'mini'), id: 'user_icon'
@@ -14,7 +18,7 @@ header
             li
               = link_to "ログアウト", destroy_user_session_path
 
-        - else
-          .navbar-right.mt7
-            = link_to "Twitterでログイン", user_omniauth_authorize_path(:twitter), class: "btn btn-info"
+          - else
+            li
+              = link_to "Twitterでログイン", user_omniauth_authorize_path(:twitter)
 
