@@ -1,6 +1,9 @@
+- title = "#{@user.user_name}の単語リスト"
+- provide(:title, title)
+
 h1.text-center
   = image_tag twitter_icon(@this_user.user_name, 'bigger'), id: 'user_big_icon'
-  = "#{@this_user.user_name}の単語リスト"
+  = title
 
   .text-center.mt10
     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-hashtags="obotan">ツイートする</a>

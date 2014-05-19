@@ -1,4 +1,7 @@
-h1.text-center 単語登録
+- title = '単語登録'
+- provide(:title, title)
+
+h1.text-center = title
 
 .container
   == render 'form'

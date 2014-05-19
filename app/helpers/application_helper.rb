@@ -29,4 +29,13 @@ module ApplicationHelper
   def twitter_icon user_name, size = 'normal'
     "http://furyu.nazo.cc/twicon/#{user_name}/#{size}"
   end
+
+  def full_title(page_title)
+    base_title = "OBOTAN − おぼえたんごちょう −"
+    if page_title.empty?
+      base_title
+    else
+      "#{page_title} | #{base_title}"
+    end
+  end
 end
