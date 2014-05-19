@@ -11,6 +11,11 @@ header
       nav.navbar-collapse.collapse#navbar-main
         ul.nav.navbar-nav.navbar-right
           - if @user
+            - unless @categories.blank?
+              li
+                = link_to "単語を追加", new_word_path
+            li
+              = link_to "カテゴリを追加", new_category_path
             li
               = link_to "/#{@user.user_name}" do
                 = image_tag twitter_icon(@user.user_name, 'mini'), id: 'user_icon'
