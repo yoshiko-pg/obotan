@@ -1,13 +1,16 @@
 tr id="#{word.id}"
   td
-  td = word.mean
-  = form_tag({ controller: :ajax, action: :check }, remote: true) do
-    = hidden_field_tag :id, word.id
-    = hidden_field_tag :user_id, @user.id
-    td
-      = text_field_tag :word, '', class: 'word_input'
-    td
-      = submit_tag "覚えたよ！", class: 'btn btn-info'
-  td = link_to "なんだっけ？", { controller: :ajax, action: :hint, id: word.id }, {remote: true, class: 'btn btn-warning' }
-  td = link_to '編集', edit_word_path(word), {class: 'btn btn-link'}
-  td = link_to '削除', word, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'
+    .col-sm-3
+      .check-div
+      = word.mean
+    = form_tag({ controller: :ajax, action: :check }, remote: true) do
+      = hidden_field_tag :id, word.id
+      = hidden_field_tag :user_id, @user.id
+      .col-sm-3
+        = text_field_tag :word, '', class: 'word_input'
+      .col-sm-4
+        = submit_tag "覚えたよ！", class: 'btn btn-info btn-mgr'
+        = link_to "なんだっけ？", { controller: :ajax, action: :hint, id: word.id }, {remote: true, class: 'btn btn-warning' }
+    .col-sm-2
+      = link_to '編集', edit_word_path(word), {class: 'btn btn-link'}
+      = link_to '削除', word, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'

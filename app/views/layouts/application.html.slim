@@ -11,8 +11,7 @@ html lang="ja"
     = render 'layouts/header'
 
     .container
-      .row
-        section#main.col-lg-6
+      .row#main
           = yield
 
     = render 'layouts/footer'

@@ -3,32 +3,26 @@
     = link_to "単語を追加", new_word_path, class: "btn btn-primary mr10"
   = link_to "カテゴリを追加", new_category_path, class: "btn btn-success"
 
-#test
 - @categories.each do |c|
 
-  section.row
+  h2.col-md-8
+    span.fa.fa-comment-o.fa-flip-horizontal
+    = c.name
+  .col-md-4.text-right
+    = link_to "カテゴリ名編集", edit_category_path(c), class: 'btn btn-link'
+    = link_to '削除', c, data: {confirm: "カテゴリ「#{c.name}」に含まれる単語もすべて削除されますが、よろしいですか？"}, method: :delete, class: 'btn btn-link'
 
-    h2.col-md-8
-      span.fa.fa-comment-o.fa-flip-horizontal
-      = c.name
-    .col-md-4.text-right
-      = link_to "カテゴリ名編集", edit_category_path(c), class: 'btn btn-link'
-      = link_to '削除', c, data: {confirm: "カテゴリ「#{c.name}」に含まれる単語もすべて削除されますが、よろしいですか？"}, method: :delete, class: 'btn btn-link'
+  - if words = @words.where(category_id: c)
+    table.table.table-striped
+      tbody
+        tr
+          th
+            .col-sm-3 意味
+            .col-sm-3 単語を入力
+            .col-sm-6
 
-    - if words = @words.where(category_id: c)
-      table.table.table-striped
-        tbody
-          tr
-            th
-            th 意味
-            th 単語を入力
-            th チェック！
-            th ヒント表示
-            th
-            th
-
-          - words.each do |w|
-            - if w.remember_count.blank?
-              = render 'pages/default_line', word: w
-            - else
-              = render 'pages/remember_line', word: w
+        - words.each do |w|
+          - if w.remember_count.blank?
+            = render 'pages/default_line', word: w
+          - else
+            = render 'pages/remember_line', word: w
