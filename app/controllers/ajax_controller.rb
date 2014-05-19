@@ -3,7 +3,7 @@ class AjaxController < ApplicationController
   before_action :get_edit_word
   
   def check
-    @result = (@word.word == params[:word]) ? true : false
+    @result = (@word.word.downcase == params[:word].downcase) ? true : false
     if @result
       @word.update(remember_count: 1)
     end
