@@ -10,7 +10,7 @@ tr id="#{word.id}"
         = text_field_tag :word, '', class: 'word_input'
       .col-sm-4
         = submit_tag "覚えたよ！", class: 'btn btn-info btn-mgr'
-        = link_to "なんだっけ？", { controller: :ajax, action: :hint, id: word.id }, {remote: true, class: 'btn btn-warning' }
+        = link_to "なんだっけ？", { controller: :ajax, action: :hint, id: word.id }, {remote: true, class: 'btn btn-warning btn-mgr' }
     .col-sm-2
       = link_to '編集', edit_word_path(word), {class: 'btn btn-link'}
       = link_to '削除', word, data: {confirm: '削除してもよろしいですか？'}, method: :delete, class: 'btn btn-link'
